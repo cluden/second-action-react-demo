@@ -16,6 +16,8 @@ jobs:
       - name: Run tests
         run: npm test
   deploy:
+#    NOTE: specify identifier of the other job(s) this job is dependent upon. Multi jobs = [job1, job2]
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Get code
